@@ -1,0 +1,64 @@
+/* aseets.css */
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease-in-out;
+    transform-origin: top left;
+  }
+  
+  .dropdown-button {
+    appearance: none;
+  }
+  
+  .burger + label {
+    position: relative;
+  }
+  
+  .burger + label span,
+  span:before,
+  span:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: black;
+    width: 2rem;
+    text-indent: -9999px;
+    display: block;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .burger + label span {
+    top: 0rem;
+  }
+  
+  .burger + label span:before {
+    top: -0.5rem;
+  }
+  
+  .burger + label span:after {
+    top: 0.5rem;
+  }
+  
+  .burger:checked + label span {
+    visibility: hidden;
+  }
+  
+  .burger:checked + label span:before {
+    top: 0rem;
+    transform: rotate(45deg);
+    visibility: visible;
+  }
+  
+  .burger:checked + label span:after {
+    top: 0rem;
+    transform: rotate(-45deg);
+    visibility: visible;
+  }
+  
+  .dropdown-button:checked ~ .dropdown-content {
+    transform: scaleY(1);
+  }
+  .dropdown-button:not(:checked) ~ .dropdown-content {
+    transform: scaleY(0);
+  }
+  
